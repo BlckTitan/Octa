@@ -1,6 +1,7 @@
 export { default as NavBar } from './NavBar';
-export { default as Homepage } from './Homepage';
-export { default as Exchanges } from './Exchanges';
-export { default as Cryptocurrencies } from './Cryptocurrencies';
-export { default as Cryptodetails } from './Cryptodetails';
-export { default as News } from './News';
+export { default as Homepage } from './homepage/Homepage';
+export { default as Exchanges } from './exchanges/Exchanges';
+export { default as Cryptocurrencies } from './cryptocurrencies/Cryptocurrencies';
+export { default as Cryptodetails } from './cryptodetails/Cryptodetails';
+export { default as News } from './news/News';
+export { default as NoPage } from './noPage/NoPage'

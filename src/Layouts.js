@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 
-export default function Layout() {
+export default function Layouts() {
   return (
     <>
       <div className='navbar'></div>
