@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Homepage, Exchanges, Cryptocurrencies, Cryptodetails, News, NoPage} from './components';
-import Layouts from './Layouts';
+import Layouts from './layout/Layouts';
 
 export default function RouteEngine() {
   return (
