@@ -1,6 +1,7 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import { Outlet } from 'react-router-dom';
+import NavBar from './navbar/NavBar';
+import './style/style.scss';
 
 export default function Layouts() {
   return (
@@ -17,7 +18,7 @@ export default function Layouts() {
         </main>
         
       </div>
-      <div className='footer'></div>
+      <div className='foot'></div>
     </>
   )
 }
