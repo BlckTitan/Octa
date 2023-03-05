@@ -1,21 +1,14 @@
 import React from 'react';
-import { Outlet, Link} from 'react-router-dom';
-import { Avatar } from '@mui/material';
+import { Outlet, Link } from 'react-router-dom';
 import NavBar from './navbar/NavBar';
-import iconImg from '../img/cryptocurrency.png';
 import './style/style.scss';
+import TopNav from './topNav/TopNav';
+import Footer from './footer/Footer';
 
 export default function Layouts() {
   return (
     <div className='container'>
-      <div className='topNav'>
-        <div className='logo'>
-            <Avatar alt='logo' src={iconImg} />
-            <Link to="/">
-              <span>Octa</span>
-            </Link>
-          </div>
-      </div>
+      <TopNav/>
       <div className='main'>
 
         <aside>
@@ -24,10 +17,15 @@ export default function Layouts() {
 
         <main>
           <Outlet/>
+          
         </main>
         
       </div>
-      <div className='foot'></div>
+
+      <div className='footer'>
+        <Footer/>
+      </div>
+
     </div >
   )
 }
