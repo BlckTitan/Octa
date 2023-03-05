@@ -3,46 +3,32 @@ div.navbar_container{
     height: 100vh;
     background-color: #232323;
     padding: 1rem 1rem;
-    div.logo{
-        width: 100%;
-        height: 3rem;
-        margin-bottom: 7rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        a{
-            font-size: 2rem;
-            margin-left: 1rem;
+    ul{
+        margin-top: 8rem;
+        li{
+            padding: 0 2rem;
+            margin: 1rem 0;
+            padding: 1rem;
         }
-        a:hover{
+        li:hover{
+            background-color: rgb(112, 111, 111);
+            border-radius: 0.3rem;
             span{
-                color: #e8e8e8;
+                color: #232323;
+                font-weight: 600;
             }
         }
-    }
-    li{
-        padding: 0 2rem;
-        margin: 1rem 0;
-        padding: 1rem;
-    }
-    li:hover{
-        background-color: rgb(112, 111, 111);
-        border-radius: 0.3rem;
-        span{
-            color: #232323;
-            font-weight: 600;
-        }
-    }
-    a{
-        color: #e8e8e8;
-        font-size: 1.2rem;
-        font-weight: 300;
-        display: flex;
-        align-items: center;
-        line-height: 0.5;
-        span{
-            display: block;
-            margin-left: 1rem;
+        a{
+            color: #e8e8e8;
+            font-size: 1.2rem;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            line-height: 0.5;
+            span{
+                display: block;
+                margin-left: 1rem;
+            }
         }
     }
 }

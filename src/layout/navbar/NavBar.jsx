@@ -1,4 +1,3 @@
-import { Avatar } from '@mui/material';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import CurrencyBitcoinOutlinedIcon from '@mui/icons-material/CurrencyBitcoinOutlined';
@@ -6,7 +5,6 @@ import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 import InsertChartOutlinedSharpIcon from '@mui/icons-material/InsertChartOutlinedSharp';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import iconImg from '../../img/cryptocurrency.png'
 import './style/navbar_style.scss';
 
 export default function NavBar() {
@@ -20,12 +18,7 @@ export default function NavBar() {
   return (
     <div className="navbar_container">
       <nav className='container'>
-        <div className='logo'>
-          <Avatar alt='logo' src={iconImg} />
-          <Link to="/">
-            <span>Octa</span>
-          </Link>
-        </div>
+        
         
         <ul>
           {menuLinks.map((menu_links_item) => (
