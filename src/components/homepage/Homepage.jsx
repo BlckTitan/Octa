@@ -1,20 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link  } from 'react-router-dom';
 import millify from 'millify';
 import './style/homepage_style.scss';
-import { Grid, Typography} from '@mui/material';
+import { Card, CardContent, Grid, Typography} from '@mui/material';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
+import { Cryptocurrencies, News } from '../../components';
 
 export default function Homepage() {
 
   const {data, isFetching } = useGetCryptoCoinsQuery()
+  const globalStats = data?.data?.stats;
+
+  if(isFetching) return 'Loading';
 
   const widget_items = [
-    {id: 1, title: 'Total Cryptocurrencies', value: 5},
-    {id: 2, title: 'Total Exchanges', value: 5},
-    {id: 3, title: 'Total Market Cap', value: 5},
-    {id: 4, title: 'Total 24h Volume', value: 5},
-    {id: 5, title: 'Total Markets', value: 5},
+    {id: 1, title: 'Total Cryptocurrencies', value: globalStats.total},
+    {id: 2, title: 'Total Exchanges', value: globalStats.totalExchanges},
+    {id: 3, title: 'Total Market Cap', value: globalStats.totalMarketCap},
+    {id: 4, title: 'Total 24h Volume', value: globalStats.total24hVolume},
+    {id: 5, title: 'Total Markets', value: globalStats.totalMarkets},
   ]
 
   return (
@@ -22,17 +26,43 @@ export default function Homepage() {
     <Typography variant='h4'>
       GLOBAL CRYPTO STATS
     </Typography>
-      {console.log(data)}
-    <Grid container spacing={2}>
+      {console.log(data?.data?.stats)}
+    <Grid container spacing={30}>
       {
         widget_items.map(widget_Item => (
-          <Grid item xs={6} key={widget_Item.id}>
-            <p>{widget_Item.title}</p>
-            <p>{widget_Item.value}</p>
+          <Grid item xs={2} key={widget_Item.id}>
+            <Card sx={{minWidth: 257, height: 120}}>
+              <CardContent>
+                  <p>{widget_Item.title}</p>
+                  <Typography variant='h5'>
+                    {millify(widget_Item.value)}
+                  </Typography>
+              </CardContent>
+            </Card>
           </Grid>
         ))
       }
     </Grid>
+    <div className='home_heading'>
+
+      <Typography variant='h5'>
+        Top 10 Cryptocurrencies in the world
+      </Typography>
+
+      <Link to='/cryptocurrencies'>Show More</Link>
+      <Cryptocurrencies simplified/>
+    </div>
+
+    <div className='home_heading'>
+
+      <Typography variant='h5'>
+        Latest Crypto news
+      </Typography>
+
+      <Link to='/news'>Show More</Link>
+
+      <News simplified/>
+    </div>
   </>
   )
 }
