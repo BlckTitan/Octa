@@ -21,7 +21,7 @@ export default function Cryptocurrencies({ simplified }) {
       {cryptoList?.data?.coins.map((currency) => (
         <Grid item xs={2} key={currency.uuid}>
           <Link to={`/crypto/${currency.uuid}`}>
-            <Card sx={{ minWidth: 285 }}>
+            <Card sx={{ minWidth: 285 }} className='card'>
                 <CardContent>
                   <div className='card_header'>
 
