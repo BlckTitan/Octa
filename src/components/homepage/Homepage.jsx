@@ -8,7 +8,7 @@ import { Cryptocurrencies, News } from '../../components';
 
 export default function Homepage() {
 
-  const {data, isFetching } = useGetCryptoCoinsQuery()
+  const {data, isFetching } = useGetCryptoCoinsQuery(10)
   const globalStats = data?.data?.stats;
 
   if(isFetching) return 'Loading';
@@ -26,13 +26,13 @@ export default function Homepage() {
     <Typography variant='h4'>
       GLOBAL CRYPTO STATS
     </Typography>
-      {console.log(data?.data?.stats)}
+    
     <Grid container spacing={30}>
-      {
-        widget_items.map(widget_Item => (
+      {widget_items.map(widget_Item => (
+
           <Grid item xs={2} key={widget_Item.id}>
-            <Card sx={{minWidth: 257, height: 120}}>
-              <CardContent>
+            <Card sx={{minWidth: 285, height: 120}} className='card'>
+              <CardContent className='cardContent'>
                   <p>{widget_Item.title}</p>
                   <Typography variant='h5'>
                     {millify(widget_Item.value)}
@@ -40,28 +40,42 @@ export default function Homepage() {
               </CardContent>
             </Card>
           </Grid>
-        ))
-      }
+
+        ))}
     </Grid>
+    
     <div className='home_heading'>
 
-      <Typography variant='h5'>
-        Top 10 Cryptocurrencies in the world
-      </Typography>
+        <header>
+          
+          <Typography variant='h5'>
+            Top 10 Cryptocurrencies in the world
+          </Typography>
+            
+          <Link to='/cryptocurrencies'>Show More</Link>
 
-      <Link to='/cryptocurrencies'>Show More</Link>
-      <Cryptocurrencies simplified/>
+        </header>
+      
+        <div className='componentContainer'>
+          <Cryptocurrencies simplified={true}/>
+        </div>
     </div>
 
     <div className='home_heading'>
 
-      <Typography variant='h5'>
-        Latest Crypto news
-      </Typography>
+        <header>
 
-      <Link to='/news'>Show More</Link>
+          <Typography variant='h5'>
+            Latest Crypto news
+          </Typography>
 
-      <News simplified/>
+          <Link to='/news'>Show More</Link>
+          
+        </header>
+
+        <div className='componentContainer'>
+          <News simplified/>
+        </div>
     </div>
   </>
   )

@@ -1,4 +1,24 @@
-p.value{
-    font-size: 1.5rem;
-    font-weight: 400;
+.card{
+    margin-top: 1rem;
+    .cardContent{
+        p{
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+div.home_heading{
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0;
+        a{
+            color: #2196f3;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        a:hover{
+            color: #1565c0;
+        }
+    }
 }

@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
-import { Grid, Card, CardContent, CardHeader, Typography, Button, CardActionArea, Avatar } from '@mui/material';
+import { Grid, Card, CardContent, Avatar } from '@mui/material';
 import './style/cryptocurrency_style.scss';
 
-export default function Cryptocurrencies() {
+export default function Cryptocurrencies({ simplified }) {
 
-  const { data: cryptoList, isFetching } = useGetCryptoCoinsQuery();
+  const count = simplified ? 10 : 100;
+
+  const { data: cryptoList, isFetching } = useGetCryptoCoinsQuery(count);
   
     if(isFetching) return 'Loading';
 
   console.log(cryptoList?.data?.coins)
+
   
   return (
     <Grid spacing={2} container columns={{ xs: 12, sm: 12, md: 12, lg: 10}}>
@@ -32,9 +35,9 @@ export default function Cryptocurrencies() {
                   </div>
                   
                   <div className='otherCryptoInfo'>
-                    <p>Price: {millify(currency.price)}</p>
-                    <p>Market Cap: {millify(currency.marketCap)}</p>
-                    <p>Daily Change: {millify(currency.change)}</p>
+                    <p>Price: <strong>{millify(currency.price)}</strong></p>
+                    <p>Market Cap: <strong>{millify(currency.marketCap)}</strong></p>
+                    <p>Daily Change: <strong>{millify(currency.change)}</strong></p>
                   </div>
                   
                 </CardContent>
