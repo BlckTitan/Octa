@@ -22,9 +22,11 @@ export default function Layouts() {
         
       </div>
 
-      <div className='footer'>
-        <Footer/>
-      </div>
+      {/*
+        <div className='footer'>
+          <Footer/>
+        </div>
+  */}
 
     </div >
   )

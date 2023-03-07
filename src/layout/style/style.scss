@@ -32,19 +32,24 @@ div.container{
     div.main{
         display: flex;
         width: 100%;
-        height: calc(100vh - 3rem);
+        max-height: calc(100vh - 3rem);
+        position: relative;
+        z-index: -1;
         main{
-            position: relative;
-            z-index: -1;
             flex: 10;
-            width: 100%;
+            right: 0;
+            max-width: 85%;
             height:  100vh;
             padding: 5rem 2rem;
-        
+            z-index: -1;
+            position: absolute;
+            right: 0;
         }
         aside{
             flex: 2;
-            width: 100%;
+            position: fixed;
+            left: 0;
+            width: 15%;
             height: 100vh;
         }
     }
