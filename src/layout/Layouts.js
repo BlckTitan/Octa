@@ -4,6 +4,8 @@ import NavBar from './navbar/NavBar';
 import './style/style.scss';
 import TopNav from './topNav/TopNav';
 import Footer from './footer/Footer';
+import NorthOutlinedIcon from '@mui/icons-material/NorthOutlined';
+import './script/script.js';
 
 export default function Layouts() {
   return (
@@ -17,7 +19,13 @@ export default function Layouts() {
 
         <main>
           <Outlet/>
-          
+
+          <div className='scrollProgress'>
+            <span className='scrollProgressValue'>
+              <NorthOutlinedIcon/>
+            </span>
+          </div>
+
         </main>
         
       </div>
