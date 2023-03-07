@@ -1,0 +1,23 @@
+div.card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e8e8e8;
+    div.text{
+        p.title{
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        p.subTitle{
+            font-size: 0.9rem;
+            color: #888888;
+        }
+    }
+}
+div.otherCryptoInfo{
+    p{
+        line-height: 1.5;
+    }
+}

@@ -3,6 +3,7 @@ import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Grid, Card, CardContent, CardHeader, Typography, Button, CardActionArea, Avatar } from '@mui/material';
+import './style/cryptocurrency_style.scss';
 
 export default function Cryptocurrencies() {
 
@@ -17,20 +18,24 @@ export default function Cryptocurrencies() {
       {cryptoList?.data?.coins.map((currency) => (
         <Grid item xs={2} key={currency.uuid}>
           <Link to={`/crypto/${currency.uuid}`}>
-            <Card sx={{ minWidth: 275 }}>
+            <Card sx={{ minWidth: 285 }}>
                 <CardContent>
-                <CardHeader
-                  avatar={
+                  <div className='card_header'>
+
+                    <div className='text'>
+                      <p className='title'>{currency.name}</p>
+                      <p className='subTitle'>Coin Rank: {currency.rank}</p>
+                    </div>
+
                     <Avatar alt='' src={currency.iconUrl}/>
-                  }
-                  title={`${currency.name}`}
-                  subheader={`Crypto Rank: ${currency.rank}`}
-                />
-                  <CardActionArea>
+
+                  </div>
+                  
+                  <div className='otherCryptoInfo'>
                     <p>Price: {millify(currency.price)}</p>
                     <p>Market Cap: {millify(currency.marketCap)}</p>
                     <p>Daily Change: {millify(currency.change)}</p>
-                  </CardActionArea>
+                  </div>
                   
                 </CardContent>
 
