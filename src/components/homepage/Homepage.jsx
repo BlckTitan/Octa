@@ -33,10 +33,12 @@ export default function Homepage() {
           <Grid item xs={2} key={widget_Item.id}>
             <Card sx={{minWidth: 285, height: 120}} className='card'>
               <CardContent className='cardContent'>
+                
                   <p>{widget_Item.title}</p>
                   <Typography variant='h5'>
                     {millify(widget_Item.value)}
                   </Typography>
+
               </CardContent>
             </Card>
           </Grid>

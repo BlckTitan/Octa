@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { cryptoApi } from "./coinSlice";
 
 const store = configureStore({
@@ -10,4 +11,7 @@ const store = configureStore({
     getDefaultMiddleware().concat(cryptoApi.middleware),
 
 })
+
+setupListeners(store.dispatch)
+
 export default store
