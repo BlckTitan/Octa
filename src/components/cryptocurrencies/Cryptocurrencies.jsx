@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import millify from 'millify';
-import { Link } from 'react-router-dom';
-import { Stack } from '@mui/system';
+import { Link } from 'react-router-dom'
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Grid, Card, CardContent, Avatar } from '@mui/material';
 import './style/cryptocurrency_style.scss';
@@ -11,7 +10,7 @@ export default function Cryptocurrencies({ simplified }) {
 
   const count = simplified ? 10 : 100;
 
-  const { data: cryptoList, isFetching, isLoading } = useGetCryptoCoinsQuery(count);
+  const { data: cryptoList } = useGetCryptoCoinsQuery(count);
 
   const [cryptos, setCryptos] = useState(cryptoList?.data?.coins);
 
