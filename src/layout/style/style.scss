@@ -4,7 +4,6 @@ html{
 div.container{
     width: 100%;
     max-height: 100vh;
-    max-height: 100dvh;
     position: relative;
     div.topNav{
         position: fixed;
@@ -37,10 +36,11 @@ div.container{
         width: 100%;
         max-height: calc(100vh - 3rem);
         position: relative;
+        top: 3rem;
         z-index: -1;
         main{
             flex: 10;
-            right: 0;
+            left: 15%;
             max-width: 85%;
             height:  100vh;
             padding: 5rem 2rem;

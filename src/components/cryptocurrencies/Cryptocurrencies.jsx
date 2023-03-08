@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
+import { Stack } from '@mui/system';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Grid, Card, CardContent, Avatar } from '@mui/material';
 import './style/cryptocurrency_style.scss';
@@ -25,7 +26,7 @@ export default function Cryptocurrencies({ simplified }) {
   }, [searchTerm, cryptoList?.data?.coins])
 
   return (
-    <div className='grid_container'>
+    <>
 
       <div className='filter'>
         <input 
@@ -64,7 +65,7 @@ export default function Cryptocurrencies({ simplified }) {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </>
     
   )
 }
