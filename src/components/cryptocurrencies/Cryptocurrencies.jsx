@@ -27,14 +27,15 @@ export default function Cryptocurrencies({ simplified }) {
 
   return (
     <>
-
-      <div className='filter'>
-        <input 
-          placeholder='search crypto currency'
-          onChange={(e) => {setSearchTerm(e.target.value)}}
-        />
-      </div>
-
+      {simplified !== true && 
+        <div className='filter'>
+          <input 
+            placeholder='search crypto currency'
+            onChange={(e) => {setSearchTerm(e.target.value)}}
+          />
+        </div>
+      }
+      
       <Grid spacing={2} container columns={{ xs: 12, sm: 12, md: 12, lg: 10}} className='grid_container'>
         {cryptos && cryptos.map((currency) => (
           <Grid item xs={2} key={currency.uuid}>
