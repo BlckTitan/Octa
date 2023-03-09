@@ -18,6 +18,9 @@ div.navbar_container{
                 font-weight: 600;
             }
         }
+        li.active{
+            background-color: red;
+        }
         a{
             color: #e8e8e8;
             font-size: 1.2rem;
