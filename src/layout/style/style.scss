@@ -42,12 +42,12 @@ div.container{
             flex: 10;
             left: 15%;
             max-width: 85%;
-            height:  100vh;
+            height:  100%;
             padding: 5rem 2rem;
             z-index: -1;
             position: absolute;
             right: 0;
-            background-color: #fffdfd;
+            margin-bottom: 5rem;
             div.scrollProgress{
                 place-items: center;
                 border-radius: 50%;
