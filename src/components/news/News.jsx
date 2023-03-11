@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useGetCryptoNewsQuery } from '../../app/newsSlice';
+import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Avatar, Grid } from '@mui/material';
 import { Card, Typography, CardContent} from '@mui/material';
 import './style/news_style.scss';
@@ -8,18 +9,36 @@ import moment from 'moment/moment';
 
 
 
-export default function News(simplified) {
+export default function News({simplified}) {
+
+  const [searchOptions, setSearchOptions] = useState()
 
   let count = simplified ? 10 : 100;
 
-  const {data: cryptoNews, isLoading} = useGetCryptoNewsQuery({newsCategory: 'cryptocurrency', count})
-
-  if( isLoading) return 'Loading'
+  const {data: cryptoCoin, isFetching} = useGetCryptoCoinsQuery(count)
+  
+  const {data: cryptoNews, isLoading} = useGetCryptoNewsQuery({newsCategory: searchOptions, count})
+  
+  if( isLoading) return 'Loading';
+  if( isFetching) return 'Fetching crypto coins'
 
   return (
     <div>
       <Grid container spacing={2}>
-        {cryptoNews.value && cryptoNews.value.map((cryproNewsData, index) => (
+        {!simplified &&
+          <Grid item xs={12}>
+            <select onClick={(e) => {setSearchOptions(e.target.value)}} className='searchCoin'>
+
+                  <option value='cryptocurrency'>Cryptocurrency</option>
+              {cryptoCoin && cryptoCoin?.data?.coins.map((coin, index) => (
+                  <option value={coin.name} key={index}>{coin.name}</option>
+              ))}
+
+            </select>
+          </Grid>
+        }
+
+        {cryptoNews.value && cryptoNews?.value.map((cryproNewsData, index) => (
           <Grid item key={index} xs={3}>
             <Link to={cryproNewsData.url} target='_blank'>
               <Card sx={{height: 230}} className='card'>
@@ -65,12 +84,7 @@ export default function News(simplified) {
           </Grid>
         ))}
       </Grid>
-
-      {console.log(cryptoNews.value)}
       
     </div>
   )
 }
-/**
- 
- */

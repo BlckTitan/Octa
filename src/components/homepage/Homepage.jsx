@@ -46,7 +46,7 @@ export default function Homepage() {
         ))}
     </Grid>
     
-    <div className='home_heading'>
+    <div className='crypto_rating_section'>
 
         <header>
           
@@ -63,7 +63,7 @@ export default function Homepage() {
         </div>
     </div>
 
-    <div className='home_heading'>
+    <div className='crypto_news_section'>
 
         <header>
 
@@ -76,7 +76,7 @@ export default function Homepage() {
         </header>
 
         <div className='componentContainer'>
-          <News simplified/>
+          <News simplified={true}/>
         </div>
     </div>
   </>

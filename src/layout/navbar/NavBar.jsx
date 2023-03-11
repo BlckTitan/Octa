@@ -6,8 +6,11 @@ import InsertChartOutlinedSharpIcon from '@mui/icons-material/InsertChartOutline
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style/navbar_style.scss';
+import './script/navBar_script';
 
 export default function NavBar() {
+
+  
   const menuLinks = [
     {label: 'Homepage', menu_link: '/', key: 'homepage', menu_icon: <HomeOutlinedIcon/>},
     {label: 'Exchanges', menu_link: '/exchanges', key: 'exchanges', menu_icon: <PaidOutlinedIcon/>},
@@ -22,8 +25,8 @@ export default function NavBar() {
         
         <ul>
           {menuLinks.map((menu_links_item) => (
-            <li key={menu_links_item.key} className=''>
-              <Link to={menu_links_item.menu_link}>
+            <li key={menu_links_item.key} className='navigation_link' >
+              <Link to={menu_links_item.menu_link} className='clicked'>
                 <span>{menu_links_item.menu_icon}</span>
                 <span>{menu_links_item.label}</span>
               </Link>

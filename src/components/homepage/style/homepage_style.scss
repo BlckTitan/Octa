@@ -6,12 +6,13 @@
         }
     }
 }
-div.home_heading{
+div.crypto_rating_section,
+div.crypto_news_section{
+    margin: 2rem 0;
     header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 1.5rem 0;
         a{
             color: #2196f3;
             font-size: 0.9rem;
