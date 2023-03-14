@@ -3,6 +3,7 @@ div.crypto_details_container{
         width: 100%;
         height: 8rem;
         border-bottom: 0.5px solid #e8e8e8;
+        margin-bottom: 1.5rem;
         div.crypto_name_img{
             display: flex;
             align-items: center;
@@ -10,6 +11,12 @@ div.crypto_details_container{
             img, h1, span{
                 margin-right: 1rem;
                 color: #232323;
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                object-position: center;
             }
             span{
                 font-size: 0.9rem;
@@ -21,10 +28,69 @@ div.crypto_details_container{
             font-size: 1.1rem;
         }
     }
-}
-img{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    object-position: center;
+    div.cryptoDetails_body{
+        select{
+            width: 8vw;
+            height: 4.5vh;
+            border: 1px solid #888888;
+            color: #232323;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1.5rem;
+            option{
+                padding: 2rem 0;
+                margin: 2rem 0;
+
+            }
+        }
+        div.statistics{
+            display: flex;
+            justify-content: space-between;
+            color: #232323;
+            div.value_statistics,
+            div.other_statistics{
+                flex: 1;
+            }
+            div.value_statistics,
+            div.other_statistics{
+                h1{
+                    margin-bottom: 1rem;
+                }
+                ul{
+                    width: 24vw;
+                    margin-top: 1.5rem;
+                    li{
+                        width: 100%;
+                        height: 3rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #e8e8e8;
+                        transition: all 0.4s ease-in-out;
+                        div.icon_title{
+                            display: flex;
+                            align-items: center;
+                            width: 18vw;
+                            height: 100%;
+                            p.cryptoDetails_icon{
+                                margin-right: 1rem;
+                                line-height: 50%;
+                            }
+                            p.cryptoDetails_title{
+                                font-weight: 400;
+                                font-size: 1.1rem;
+                            }
+                        }
+                        p.cryptoDetails_value{
+                            font-weight: 600;
+                        }
+                    }
+                    li:hover{
+                        background-color: #888888;
+                    }
+                }
+            }
+        }
+    }
 }

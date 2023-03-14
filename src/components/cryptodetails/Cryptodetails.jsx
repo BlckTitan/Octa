@@ -34,7 +34,7 @@ export default function Cryptodetails() {
     { title: 'Rank', value: cryptoDetails?.rank, icon: <NumbersOutlinedIcon /> },
     { title: '24h Volume', value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`, icon: <BoltOutlinedIcon /> },
     { title: 'Market Cap', value: `$ ${cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)}`, icon: <CandlestickChartOutlinedIcon /> },
-    { title: 'All-time-high(daily avg.)', value: `$ ${cryptoDetails?.allTimeHigh?.price && millify(cryptoDetails?.allTimeHigh?.price)}`, icon: <EmojiEventsOutlinedIcon /> },
+    { title: 'All-time-high (daily avg.)', value: `$ ${cryptoDetails?.allTimeHigh?.price && millify(cryptoDetails?.allTimeHigh?.price)}`, icon: <EmojiEventsOutlinedIcon /> },
   ];
 
   const genericStats = [
@@ -53,9 +53,64 @@ export default function Cryptodetails() {
           <h1 style={{color: `${cryptoDetails.color}`}}>{cryptoDetails.name}</h1>
           <span>{`(${cryptoDetails.symbol})`}</span>
         </div>
+        <p>{cryptoDetails.tags}</p>
         <p>{cryptoDetails.description}</p>
       </header>
-      {console.log(cryptoDetails)}
+
+      <div className='cryptoDetails_body'>
+        <select onClick={ (e) => setTimePeriod(e.target.value)}>
+          {time.map((timeframe, index) => (
+            <option key={index}>{timeframe}</option>
+          ))}
+        </select>
+        <div className='statistics'>
+
+          <div className='value_statistics'>
+            <h1>{cryptoDetails.name} Value Statistics</h1>
+            <p>An overview of {cryptoDetails.name} performance.</p>
+
+            <ul>
+              {stats.map((stats_data, index) => (
+                <li key={index}>
+
+                  <div className='icon_title'>
+                    <p className='cryptoDetails_icon'>{stats_data.icon}</p>
+                    <p className='cryptoDetails_title'>{stats_data.title}</p>
+                  </div>
+
+                  <p className='cryptoDetails_value'>{stats_data.value}</p>
+
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className='other_statistics'>
+
+            <h1>Other Statistics</h1>
+            <p>An overview of all cryptocurrency performance.</p>
+
+            
+            <ul>
+              {genericStats.map((genericStats_data, index) => (
+                <li key={index}>
+
+                  <div className='icon_title'>
+                    <p className='cryptoDetails_icon'>{genericStats_data.icon}</p>
+                    <p className='cryptoDetails_title'>{genericStats_data.title}</p>
+                  </div>
+
+                  <p className='cryptoDetails_value'>{genericStats_data.value}</p>
+
+                </li>
+              ))}
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+      {console.log(cryptoDetails, timePeriod)}
     </div>
   )
 }
