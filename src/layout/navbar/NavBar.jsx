@@ -15,8 +15,7 @@ export default function NavBar() {
     {label: 'Homepage', menu_link: '/', key: 'homepage', menu_icon: <HomeOutlinedIcon/>},
     {label: 'Exchanges', menu_link: '/exchanges', key: 'exchanges', menu_icon: <PaidOutlinedIcon/>},
     {label: 'Crypto currencies', menu_link: '/cryptocurrencies', key: 'cryptocurrencies', menu_icon: <CurrencyBitcoinOutlinedIcon/>},
-    {label: 'Crypto details', menu_link: '/crypto/12', key: 'cryptodetails', menu_icon: <InsertChartOutlinedSharpIcon/>},
-    {label: 'News', menu_link: '/news', key: 'news', menu_icon: <NewspaperOutlinedIcon/>}
+    {label: 'News', menu_link: '/news', key: 'news', menu_icon: <NewspaperOutlinedIcon/>},
   ]
   return (
     <div className="navbar_container">

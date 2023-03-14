@@ -1,0 +1,30 @@
+div.crypto_details_container{
+    header{
+        width: 100%;
+        height: 8rem;
+        border-bottom: 0.5px solid #e8e8e8;
+        div.crypto_name_img{
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            img, h1, span{
+                margin-right: 1rem;
+                color: #232323;
+            }
+            span{
+                font-size: 0.9rem;
+                color: #888888;
+                font-weight: 600;
+            }
+        }
+        p{
+            font-size: 1.1rem;
+        }
+    }
+}
+img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+}
