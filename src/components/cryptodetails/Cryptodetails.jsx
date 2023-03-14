@@ -48,12 +48,13 @@ export default function Cryptodetails() {
   return (
     <div className='crypto_details_container'>
       <header>
+        
         <div className='crypto_name_img'>
           <img src={cryptoDetails.iconUrl} alt=''/>
           <h1 style={{color: `${cryptoDetails.color}`}}>{cryptoDetails.name}</h1>
           <span>{`(${cryptoDetails.symbol})`}</span>
         </div>
-        <p>{cryptoDetails.tags}</p>
+        
         <p>{cryptoDetails.description}</p>
       </header>
 
