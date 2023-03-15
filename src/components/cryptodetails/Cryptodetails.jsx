@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
-import { useGetCoinIdQuery } from '../../app/coinSlice';
 import millify from 'millify';
+//store
+import { useGetCoinByIdQuery, useGetCoinHistoryQuery } from '../../app/coinSlice';
+//style
 import './style/cryptoDetails_style.scss';
 //icons
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
@@ -17,12 +18,15 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import FunctionsIcon from '@mui/icons-material/Functions';
 import SuperscriptIcon from '@mui/icons-material/Superscript';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+//component
+import LineChart from '../LineChart';
 
 export default function Cryptodetails() {
   
   const {coinId} = useParams()
-  const [timePeriod, setTimePeriod] = useState('7d');
-  const {data, isFetching} = useGetCoinIdQuery(coinId)
+  const [timePeriod, setTimePeriod] = useState('3h');
+  const {data, isFetching} = useGetCoinByIdQuery(coinId);
+  const {data: coinHistoryData, } = useGetCoinHistoryQuery({coinId, timePeriod})
   const cryptoDetails = data?.data?.coin;
 
   if(isFetching) return 'Loading';
@@ -32,7 +36,7 @@ export default function Cryptodetails() {
   const stats = [
     { title: 'Price to USD', value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`, icon: <MonetizationOnOutlinedIcon /> },
     { title: 'Rank', value: cryptoDetails?.rank, icon: <NumbersOutlinedIcon /> },
-    { title: '24h Volume', value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`, icon: <BoltOutlinedIcon /> },
+    { title: '24h Volume', value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.["24hVolume"])}`, icon: <BoltOutlinedIcon /> },
     { title: 'Market Cap', value: `$ ${cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)}`, icon: <CandlestickChartOutlinedIcon /> },
     { title: 'All-time-high (daily avg.)', value: `$ ${cryptoDetails?.allTimeHigh?.price && millify(cryptoDetails?.allTimeHigh?.price)}`, icon: <EmojiEventsOutlinedIcon /> },
   ];
@@ -56,14 +60,32 @@ export default function Cryptodetails() {
         </div>
         
         <p>{cryptoDetails.description}</p>
+
       </header>
 
       <div className='cryptoDetails_body'>
-        <select onClick={ (e) => setTimePeriod(e.target.value)}>
-          {time.map((timeframe, index) => (
-            <option key={index}>{timeframe}</option>
-          ))}
-        </select>
+
+        <div className='cryptoChart'>
+
+          <select onClick={(e) => setTimePeriod(e.target.value)}>
+            {time.map((timeframe, index) => (
+              <option key={index}>{timeframe}</option>
+            ))}
+          </select>
+
+              
+          <div className='cryptoChart_chart'>
+            {coinHistoryData && <LineChart 
+              chart_period={timePeriod} 
+              name={cryptoDetails?.name}
+              currentPrice={millify(cryptoDetails?.price)}
+              change={coinHistoryData?.data?.change}
+              history={coinHistoryData?.data?.history}
+            />}
+          </div>
+        
+        </div>
+
         <div className='statistics'>
 
           <div className='value_statistics'>
@@ -111,7 +133,7 @@ export default function Cryptodetails() {
 
         </div>
       </div>
-      {console.log(cryptoDetails, timePeriod)}
+      {console.log(coinHistoryData)}
     </div>
   )
 }

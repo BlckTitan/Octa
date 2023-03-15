@@ -29,21 +29,35 @@ div.crypto_details_container{
         }
     }
     div.cryptoDetails_body{
-        select{
-            width: 8vw;
-            height: 4.5vh;
-            border: 1px solid #888888;
-            color: #232323;
-            font-size: 1rem;
-            border-radius: 0.3rem;
-            padding: 0.5rem 1rem;
-            margin-bottom: 1.5rem;
-            option{
-                padding: 2rem 0;
-                margin: 2rem 0;
-
+        div.cryptoChart{
+            margin-bottom: 1rem;
+            div.header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #232323;
+                Span{
+                    color: #888888;
+                    font-weight: 600;
+                }
+            }
+            select{
+                width: 8vw;
+                height: 4.5vh;
+                border: 1px solid #888888;
+                color: #232323;
+                font-size: 1rem;
+                border-radius: 0.3rem;
+                padding: 0.5rem 1rem;
+                margin-bottom: 1.5rem;
+                option{
+                    padding: 2rem 0;
+                    margin: 2rem 0;
+    
+                }
             }
         }
+        
         div.statistics{
             display: flex;
             justify-content: space-between;
@@ -56,6 +70,7 @@ div.crypto_details_container{
             div.other_statistics{
                 h1{
                     margin-bottom: 1rem;
+                    color: #232323;
                 }
                 ul{
                     width: 24vw;
