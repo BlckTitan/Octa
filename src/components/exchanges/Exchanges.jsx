@@ -25,11 +25,12 @@ export default function Exchanges({simplified}) {
   const [coinId, setCoinId] = useState('Qwsogvtv82FCd')
   const {data: coinExchange, isFetching} = useGetCoinExchangesByIdQuery({coinId, count})
   const {data: allCoins} = useGetCryptoCoinsQuery(count)
+
   let coinDetailsInfo = allCoins?.data?.coins
   let coinExchangeInfo = coinExchange?.data?.exchanges;
 
-  if(isFetching) return 'Loading';
-  
+  if(isFetching) return 'Loading crypto exchanges';
+  console.log(coinDetailsInfo)
   return (
     <div className='exchange_container'>
       <header>
@@ -40,11 +41,12 @@ export default function Exchanges({simplified}) {
               
             ))}
           </select>
+          <p>Crypto coin exchanges</p>
       </header>
       
       <div className='exchange_body'>
         <TableContainer component={Paper}>
-          <Table aria-label="collapsible table">
+          <Table aria-label="table">
 
             <TableHead>
               <TableRow>
