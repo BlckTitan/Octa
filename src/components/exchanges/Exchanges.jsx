@@ -17,6 +17,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 //millify
 import millify from 'millify';
+import Loader from '../Loader';
 
 export default function Exchanges({simplified}) {
 
@@ -29,7 +30,7 @@ export default function Exchanges({simplified}) {
   let coinDetailsInfo = allCoins?.data?.coins
   let coinExchangeInfo = coinExchange?.data?.exchanges;
 
-  if(isFetching) return 'Loading crypto exchanges';
+  if(isFetching) return <Loader/>;
   console.log(coinDetailsInfo)
   return (
     <div className='exchange_container'>

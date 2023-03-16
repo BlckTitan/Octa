@@ -20,6 +20,7 @@ import SuperscriptIcon from '@mui/icons-material/Superscript';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 //component
 import LineChart from '../LineChart';
+import Loader from '../Loader';
 
 export default function Cryptodetails() {
   
@@ -30,7 +31,7 @@ export default function Cryptodetails() {
   const {data: coinHistoryData, } = useGetCoinHistoryQuery({coinId, timePeriod})
   const cryptoDetails = data?.data?.coin;
 
-  if(isFetching) return 'Loading';
+  if(isFetching) return <Loader/>;
 
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 

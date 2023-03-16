@@ -6,6 +6,7 @@ import { Avatar, Grid } from '@mui/material';
 import { Card, Typography, CardContent} from '@mui/material';
 import './style/news_style.scss';
 import moment from 'moment/moment';
+import Loader from '../Loader';
 
 
 
@@ -19,8 +20,8 @@ export default function News({simplified}) {
   
   const {data: cryptoNews, isLoading} = useGetCryptoNewsQuery({newsCategory: searchOptions, count})
   
-  if( isLoading) return 'Loading';
-  if( isFetching) return 'Fetching crypto coins'
+  if( isLoading) return <Loader/>;
+  if( isFetching) return <Loader/>
 
   return (
     <div>

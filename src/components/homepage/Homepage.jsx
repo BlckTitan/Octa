@@ -5,13 +5,14 @@ import './style/homepage_style.scss';
 import { Card, CardContent, Grid, Typography} from '@mui/material';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Cryptocurrencies, News } from '../../components';
+import Loader from '../Loader';
 
 export default function Homepage() {
 
   const {data, isFetching } = useGetCryptoCoinsQuery(10)
   const globalStats = data?.data?.stats;
 
-  if(isFetching) return 'Loading';
+  if(isFetching) return <Loader/>;
 
   const widget_items = [
     {id: 1, title: 'Total Cryptocurrencies', value: globalStats.total},
