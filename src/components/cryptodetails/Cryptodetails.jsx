@@ -24,6 +24,7 @@ import LineChart from '../LineChart';
 export default function Cryptodetails() {
   
   const {coinId} = useParams()
+
   const [timePeriod, setTimePeriod] = useState('3h');
   const {data, isFetching} = useGetCoinByIdQuery(coinId);
   const {data: coinHistoryData, } = useGetCoinHistoryQuery({coinId, timePeriod})
@@ -36,7 +37,7 @@ export default function Cryptodetails() {
   const stats = [
     { title: 'Price to USD', value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`, icon: <MonetizationOnOutlinedIcon /> },
     { title: 'Rank', value: cryptoDetails?.rank, icon: <NumbersOutlinedIcon /> },
-    { title: '24h Volume', value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.["24hVolume"])}`, icon: <BoltOutlinedIcon /> },
+    { title: '24h Volume', value: `$ ${cryptoDetails?.['24hVolume'] && millify(cryptoDetails?.['24hVolume'])}`, icon: <BoltOutlinedIcon /> },
     { title: 'Market Cap', value: `$ ${cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)}`, icon: <CandlestickChartOutlinedIcon /> },
     { title: 'All-time-high (daily avg.)', value: `$ ${cryptoDetails?.allTimeHigh?.price && millify(cryptoDetails?.allTimeHigh?.price)}`, icon: <EmojiEventsOutlinedIcon /> },
   ];
@@ -133,7 +134,6 @@ export default function Cryptodetails() {
 
         </div>
       </div>
-      {console.log(coinHistoryData)}
     </div>
   )
 }

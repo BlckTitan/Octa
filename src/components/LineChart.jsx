@@ -59,7 +59,6 @@ export default function LineChart(props) {
             <span>Current price: {props.currentPrice}</span>
         </div>
         <Line width={1300} height={400} options={options} data={data}/>
-        {console.log(coinPrice, coinTimestamp)}
     </div>
   )
 }
