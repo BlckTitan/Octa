@@ -17,22 +17,19 @@ export default function NavBar() {
     {label: 'News', menu_link: '/news', key: 'news', menu_icon: <NewspaperOutlinedIcon/>},
   ]
   return (
-    <div className="navbar_container">
-      <nav className='container'>
-        
-        
-        <ul>
-          {menuLinks.map((menu_links_item) => (
-            <li key={menu_links_item.key} className='navigation_link' >
-              <Link to={menu_links_item.menu_link} className='clicked'>
-                <span>{menu_links_item.menu_icon}</span>
-                <span>{menu_links_item.label}</span>
-              </Link>
-            </li>
-          ))}
+    <nav className='navbar_container'>
+      
+      <ul>
+        {menuLinks.map((menu_links_item) => (
+          <li key={menu_links_item.key} className='navigation_link' >
+            <Link to={menu_links_item.menu_link} className='clicked'>
+              <span>{menu_links_item.menu_icon}</span>
+              <span>{menu_links_item.label}</span>
+            </Link>
+          </li>
+        ))}
 
-        </ul>
-      </nav>
-    </div>
+      </ul>
+    </nav>
   )
 }

@@ -1,6 +1,6 @@
 const scrollToTop = () =>{
     let scroll_progress = document.querySelector('.scrollProgress');
-    let scroll_progress_value = document.querySelector('.scrollProgressValue');
+    //let scroll_progress_value = document.querySelector('.scrollProgressValue');
     let scroll_position = document.documentElement.scrollTop;
     let scroll_height =  
         document.documentElement.scrollHeight - 

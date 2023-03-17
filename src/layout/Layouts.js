@@ -1,19 +1,33 @@
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import NavBar from './navbar/NavBar';
-import './style/style.scss';
 import TopNav from './topNav/TopNav';
 import Footer from './footer/Footer';
+//style
+import './style/style.scss';
+//icons
 import NorthOutlinedIcon from '@mui/icons-material/NorthOutlined';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import './script/script.js';
 
 export default function Layouts() {
+
+  const [active, setActive] = useState(false)
+
   return (
     <div className='container'>
-      <TopNav/>
+      <nav className='topNav'>
+        <button onClick={() => setActive(!active)}>
+          <MenuOutlinedIcon sx={{fontSize: 30}}/>
+        </button>
+        
+        <TopNav/>
+      </nav>
       <div className='main'>
 
-        <aside>
+        <aside 
+          className={(active === true) ? 'active' : 'sidebar'}
+        >
           <NavBar/>
         </aside>
 
@@ -35,7 +49,6 @@ export default function Layouts() {
           <Footer/>
         </div>
   */}
-
     </div >
   )
 }
