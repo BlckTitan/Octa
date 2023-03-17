@@ -2,7 +2,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import CurrencyBitcoinOutlinedIcon from '@mui/icons-material/CurrencyBitcoinOutlined';
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
-import InsertChartOutlinedSharpIcon from '@mui/icons-material/InsertChartOutlinedSharp';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style/navbar_style.scss';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { Avatar } from '@mui/material';
-import iconImg from '../../img/cryptocurrency.png'
+import iconImg from '../../img/cryptocurrency_logo.png'
 
 
 export default function TopNav() {
