@@ -36,3 +36,36 @@ nav.navbar_container{
         }
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 990px){
+    nav.navbar_container{
+        height: 50vh;
+        padding: 1rem 0.5rem;
+        ul{
+            margin-top: 7rem;
+            li{
+                padding: 0 1rem;
+                margin: 1.5rem 0;
+            }
+            a{
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 799px){
+    nav.navbar_container{
+        height: 40vh;
+        padding: 1rem 0.5rem;
+        ul{
+            margin-top: 2rem;
+            li{
+                padding: 0;
+                margin: 1.5rem 0;
+            }
+            a{
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
