@@ -28,10 +28,10 @@ export default function Homepage() {
       GLOBAL CRYPTO STATS
     </Typography>
     
-    <Grid container spacing={30}>
+    <Grid container spacing={4}>
       {widget_items.map(widget_Item => (
 
-          <Grid item xs={2} key={widget_Item.id}>
+          <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={widget_Item.id}>
             <Card sx={{minWidth: 285, height: 120}} className='card'>
               <CardContent className='cardContent'>
                 

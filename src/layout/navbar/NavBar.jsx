@@ -13,7 +13,7 @@ export default function NavBar() {
   const menuLinks = [
     {label: 'Homepage', menu_link: '/', key: 'homepage', menu_icon: <HomeOutlinedIcon/>},
     {label: 'Exchanges', menu_link: '/exchanges', key: 'exchanges', menu_icon: <PaidOutlinedIcon/>},
-    {label: 'Crypto currencies', menu_link: '/cryptocurrencies', key: 'cryptocurrencies', menu_icon: <CurrencyBitcoinOutlinedIcon/>},
+    {label: 'Currency', menu_link: '/cryptocurrencies', key: 'cryptocurrencies', menu_icon: <CurrencyBitcoinOutlinedIcon/>},
     {label: 'News', menu_link: '/news', key: 'news', menu_icon: <NewspaperOutlinedIcon/>},
   ]
   return (
