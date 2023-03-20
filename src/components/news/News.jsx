@@ -23,8 +23,8 @@ export default function News({simplified}) {
   if( isFetching) return <Loader/>
 
   return (
-    <div>
-      <Grid container spacing={2}>
+    <div >
+      <Grid container spacing={4}>
         {!simplified &&
           <Grid item xs={12}>
             <select onClick={(e) => {setSearchOptions(e.target.value)}} className='searchCoin'>
@@ -39,9 +39,9 @@ export default function News({simplified}) {
         }
 
         {cryptoNews.value && cryptoNews?.value.map((cryproNewsData, index) => (
-          <Grid item key={index} xs={3}>
-            <Link to={cryproNewsData.url} target='_blank'>
-              <Card sx={{height: 230}} className='card'>
+          <Grid item key={index} xs={12} sm={12} md={12} lg={4} xl={2}>
+            <Link to={cryproNewsData.url} target='_blank' className='newsGrid_links'>
+              <Card sx={{height: 230}} className='card_news'>
                 <header>
 
                   <img 
@@ -55,7 +55,7 @@ export default function News({simplified}) {
 
                 </header>
 
-                <CardContent>
+                <CardContent className='content'>
 
                   <Typography variant="body2" color="text.secondary">
                     {cryproNewsData.description.substring(0, 100)}

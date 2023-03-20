@@ -1,25 +1,51 @@
-.card{
-    margin-top: 1rem;
-    .cardContent{
-        p{
-            margin-bottom: 1.5rem;
+div.homepage_container{
+    .card{
+        margin-top: 1rem;
+        .cardContent{
+            p{
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    div.crypto_rating_section,
+    div.crypto_news_section{
+        margin: 2rem 0;
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+                color: #2196f3;
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+            a:hover{
+                color: #1565c0;
+            }
         }
     }
 }
-div.crypto_rating_section,
-div.crypto_news_section{
-    margin: 2rem 0;
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        a{
-            color: #2196f3;
-            font-size: 0.9rem;
-            font-weight: 400;
+@media only screen and (min-width: 800px) and (max-width: 990px){
+    div.crypto_rating_section,
+    div.crypto_news_section{
+        header{
+            a{
+                font-size: 1.2rem !important;
+            }
         }
-        a:hover{
-            color: #1565c0;
+    }
+}
+@media only screen and (max-width: 799px){
+    div.crypto_rating_section,
+    div.crypto_news_section{
+        margin: 2rem 0;
+        header{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start !important;
+            a{
+                font-size: 1.2rem !important;
+            }
         }
     }
 }

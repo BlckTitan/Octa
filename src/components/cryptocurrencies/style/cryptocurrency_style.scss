@@ -1,43 +1,70 @@
-div.filter{
+div.cryptocurrencies_container{
+    div.filter{
     margin: 1rem 0;
-    input{
-        width: 25vw;
-        height: 2.5rem;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.3rem;
-        border: 2px solid #888888;
+        input{
+            width: 25vw;
+            height: 2.5rem;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            border: 2px solid #888888;
+        }
+        input:focus-within{
+            border: 2px solid #42a5f5;
+        }
     }
-    input:focus-within{
-        border: 2px solid #42a5f5;
-    }
-}
-.card{
-    div.card_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #e8e8e8;
-        div.text{
-            p.title{
-                font-size: 0.9rem;
-                font-weight: 600;
-            }
-            p.subTitle{
-                font-size: 0.9rem;
-                color: #888888;
+    .card{
+        width: 300px;
+        div.card_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #e8e8e8;
+            div.text{
+                p.title{
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+                p.subTitle{
+                    font-size: 0.9rem;
+                    color: #888888;
+                }
             }
         }
     }
+    .card:hover{
+        -webkit-box-shadow: 0px 4px 3px 1px #C2C2C2; 
+        box-shadow: 0px 4px 3px 1px #C2C2C2;
+    }
+    div.otherCryptoInfo{
+        p{
+            line-height: 1.5;
+        }
+    }
 }
-.card:hover{
-    -webkit-box-shadow: 0px 4px 3px 1px #C2C2C2; 
-    box-shadow: 0px 4px 3px 1px #C2C2C2;
+@media only screen and (min-width: 800px) and (max-width: 990px){
+    div.cryptocurrencies_container{
+        div.filter{
+            margin: 1rem;
+            input{
+                width: 55vw;
+            }
+        }
+        div.grid_container{
+            padding: 1rem;
+        }
+    }
 }
-div.otherCryptoInfo{
-    p{
-        line-height: 1.5;
+@media only screen and (max-width: 799px){
+    div.filter{
+        input{
+            width: 60vw;
+        }
+    }
+    div.grid_container{
+        display: flex;
+        flex-wrap: wrap;
     }
 }

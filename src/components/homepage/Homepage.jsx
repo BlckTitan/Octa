@@ -23,7 +23,7 @@ export default function Homepage() {
   ]
 
   return (
-  <>
+  <div className='homepage_container'>
     <Typography variant='h4' component='h2'>
       GLOBAL CRYPTO STATS
     </Typography>
@@ -80,6 +80,6 @@ export default function Homepage() {
           <News simplified={true}/>
         </div>
     </div>
-  </>
+  </div>
   )
 }

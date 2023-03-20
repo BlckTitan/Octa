@@ -27,16 +27,16 @@ a:hover{
     overflow: hidden;
 }
 
-.navbar{
+/*.navbar{
     flex: 0.2;
     background-color: rgb(0, 21, 41);
 }
-
-.main{
+*/
+/*.main{
     flex: 0.8;
     width: 100%;
     
-}
+}*/
 .routes{
     padding: 20px;
 }
@@ -79,7 +79,7 @@ a:hover{
     align-items: center;
 }
 
-@media screen and (max-width:1300px){
+/*@media screen and (max-width:1300px){
     .main{
         margin-left: 50px;
     }
@@ -137,7 +137,7 @@ a:hover{
         font-size: 1.3rem !important;
     }
 }
-
+*/
 .coin-detail-container{
     margin: 30px;
 }
@@ -266,7 +266,7 @@ a:hover{
     background-color: var(--bgSecondary);
 }
 
-@media screen and (max-width:1000px){
+/*@media screen and (max-width:1000px){
     .stats-container{
         flex-direction: column;
     }
@@ -291,7 +291,7 @@ a:hover{
         margin-top: 20px;
     }
 }
-
+*/
 .select-news{
     width: 180px;
 }

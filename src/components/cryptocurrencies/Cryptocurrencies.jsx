@@ -25,7 +25,7 @@ export default function Cryptocurrencies({ simplified }) {
   }, [searchTerm, cryptoList?.data?.coins])
 
   return (
-    <>
+    <div className='cryptocurrencies_container'>
       {simplified !== true && 
         <div className='filter'>
           <input 
@@ -35,9 +35,9 @@ export default function Cryptocurrencies({ simplified }) {
         </div>
       }
       
-      <Grid spacing={2} container columns={{ xs: 12, sm: 12, md: 12, lg: 10}} className='grid_container'>
+      <Grid spacing={2} container className='grid_container'>
         {cryptos && cryptos.map((currency) => (
-          <Grid item xs={2} key={currency.uuid}>
+          <Grid item xs={12} sm={6} md={6} lg={4} xl={2} key={currency.uuid}>
             <Link to={`/crypto/${currency.uuid}`}>
               <Card sx={{ minWidth: 285 }} className='card'>
                   <CardContent>
@@ -65,7 +65,7 @@ export default function Cryptocurrencies({ simplified }) {
           </Grid>
         ))}
       </Grid>
-    </>
+    </div>
     
   )
 }

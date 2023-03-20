@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from './navbar/NavBar';
 import TopNav from './topNav/TopNav';
-import Footer from './footer/Footer';
 //style
 import './style/style.scss';
 //icons
@@ -43,12 +42,6 @@ export default function Layouts() {
         </main>
         
       </div>
-
-      {/*
-        <div className='footer'>
-          <Footer/>
-        </div>
-  */}
     </div >
   )
 }
