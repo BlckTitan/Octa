@@ -54,6 +54,13 @@ div.cryptocurrencies_container{
         }
         div.grid_container{
             padding: 1rem;
+            flex-wrap: wrap;
+            div{
+                a.currency_link{
+                    display: grid;
+                    place-content: center;
+                }
+            }
         }
     }
 }
@@ -66,5 +73,12 @@ div.cryptocurrencies_container{
     div.grid_container{
         display: flex;
         flex-wrap: wrap;
+        div{
+            
+            a.currency_link{
+                display: grid;
+                place-content: center;
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ export default function Cryptocurrencies({ simplified }) {
       <Grid spacing={2} container className='grid_container'>
         {cryptos && cryptos.map((currency) => (
           <Grid item xs={12} sm={6} md={6} lg={4} xl={2} key={currency.uuid}>
-            <Link to={`/crypto/${currency.uuid}`}>
+            <Link to={`/crypto/${currency.uuid}`} className='currency_link'>
               <Card sx={{ minWidth: 285 }} className='card'>
                   <CardContent>
                     <div className='card_header'>
