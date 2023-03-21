@@ -55,7 +55,11 @@ export default function Exchanges({simplified}) {
                 <TableCell sx={{fontWeight: '600', color: '#232323'}} align="left">Rank</TableCell>
                 <TableCell sx={{fontWeight: '600', color: '#232323'}} align="left">24H Trade Volume</TableCell>
                 <TableCell sx={{fontWeight: '600', color: '#232323'}} align="left">Price</TableCell>
-                <TableCell sx={{fontWeight: '600', color: '#232323', display: 'flex', alignItems: 'center'}} align="left">
+                <TableCell 
+                    sx={{fontWeight: '600', color: '#232323', display: 'flex', alignItems: 'center'}}
+                    align="left"
+                    className='verified'
+                >
                   <VerifiedIcon sx={{color: '#232323', marginRight: '1rem'}}/>
                   <span>Verified</span>
                 </TableCell>
