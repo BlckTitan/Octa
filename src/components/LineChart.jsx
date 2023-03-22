@@ -58,7 +58,7 @@ export default function LineChart(props) {
             <h3>{props.name} Price chart</h3>
             <span>Current price: {props.currentPrice}</span>
         </div>
-        <Line width={1300} height={400} options={options} data={data}/>
+        <Line options={options} data={data}/>
     </div>
   )
 }
