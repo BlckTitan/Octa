@@ -85,7 +85,6 @@ export default function Cryptodetails() {
               history={coinHistoryData?.data?.history}
             />}
           </div>
-        
         </div>
 
         <div className='statistics'>
