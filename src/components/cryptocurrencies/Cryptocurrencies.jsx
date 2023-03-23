@@ -35,36 +35,33 @@ export default function Cryptocurrencies({ simplified }) {
         </div>
       }
       
-      <Grid spacing={2} container className='grid_container'>
+      <div container className='grid_container'>
         {cryptos && cryptos.map((currency) => (
-          <Grid item xs={12} sm={6} md={6} lg={4} xl={2} key={currency.uuid}>
-            <Link to={`/crypto/${currency.uuid}`} className='currency_link'>
-              <Card sx={{ minWidth: 285 }} className='card'>
-                  <CardContent>
-                    <div className='card_header'>
+          <Link to={`/crypto/${currency.uuid}`} key={currency.uuid} className='currency_link'>
+            <Card className='card'>
+                <CardContent>
+                  <div className='card_header'>
 
-                      <div className='text'>
-                        <p className='title'>{currency.name}</p>
-                        <p className='subTitle'>Coin Rank: {currency.rank}</p>
-                      </div>
-
-                      <Avatar alt='' src={currency.iconUrl}/>
-
+                    <div className='text'>
+                      <p className='title'>{currency.name}</p>
+                      <p className='subTitle'>Coin Rank: {currency.rank}</p>
                     </div>
-                    
-                    <div className='otherCryptoInfo'>
-                      <p>Price: <strong>{millify(currency.price)}</strong></p>
-                      <p>Market Cap: <strong>{millify(currency.marketCap)}</strong></p>
-                      <p>Daily Change: <strong>{millify(currency.change)}</strong></p>
-                    </div>
-                    
-                  </CardContent>
 
-              </Card>
-            </Link>  
-          </Grid>
+                    <Avatar alt='' src={currency.iconUrl}/>
+
+                  </div>
+                  
+                  <div className='otherCryptoInfo'>
+                    <p>Price: <strong>{millify(currency.price)}</strong></p>
+                    <p>Market Cap: <strong>{millify(currency.marketCap)}</strong></p>
+                    <p>Daily Change: <strong>{millify(currency.change)}</strong></p>
+                  </div>
+                </CardContent>
+
+            </Card>
+          </Link>  
         ))}
-      </Grid>
+      </div>
     </div>
     
   )
