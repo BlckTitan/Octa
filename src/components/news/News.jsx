@@ -39,7 +39,7 @@ export default function News({simplified}) {
         }
 
         {cryptoNews.value && cryptoNews?.value.map((cryproNewsData, index) => (
-          <Grid item key={index} xs={12} sm={12} md={12} lg={4} xl={2}>
+          <Grid item key={index} xs={12} sm={12} md={12} lg={4} xl={3}>
             <Link to={cryproNewsData.url} target='_blank' className='newsGrid_links'>
               <Card sx={{height: 230}} className='card_news'>
                 <header>
