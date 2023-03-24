@@ -39,9 +39,9 @@ export default function News({simplified}) {
         }
 
         {cryptoNews.value && cryptoNews?.value.map((cryproNewsData, index) => (
-          <Grid item key={index} xs={12} sm={12} md={12} lg={4} xl={3}>
+          <Grid item key={index} xs={12} sm={12} md={12} lg={4} xl={3} className='news_grid'>
             <Link to={cryproNewsData.url} target='_blank' className='newsGrid_links'>
-              <Card sx={{height: 230}} className='card_news'>
+              <Card className='card_news'>
                 <header>
 
                   <img 
@@ -55,30 +55,26 @@ export default function News({simplified}) {
 
                 </header>
 
-                <CardContent className='content'>
 
-                  <Typography variant="body2" color="text.secondary">
+                  <div className="news_item">
                     {cryproNewsData.description.substring(0, 100)}
-                  </Typography>
+                  </div>
                   
                   <div className='newsSource'>
-                    <div className='provider'>
-
                       <Avatar 
                         src={cryproNewsData?.provider[0]?.image?.thumbnail?.contentUrl} 
                         alt=''
                       />
-
+                    <div className='provider'>
                       <span>{cryproNewsData?.provider[0]?.name}</span>
+                      <span className='time'>
+                        {moment(cryproNewsData.datePublished).startOf('seconds').fromNow()}
+                      </span>
 
                     </div>
 
-                    <span>
-                      {moment(cryproNewsData.datePublished).startOf('seconds').fromNow()}
-                    </span>
-
                   </div>
-                </CardContent>
+                  
               </Card>
             </Link>
           </Grid>

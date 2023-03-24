@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -58,7 +59,9 @@ export default function LineChart(props) {
             <h3>{props.name} Price chart</h3>
             <span>Current price: {props.currentPrice}</span>
         </div>
-        <Line options={options} data={data}/>
+        <div className='chart_plot'>
+          <Line  options={options} data={data}/>
+        </div>
     </div>
   )
 }

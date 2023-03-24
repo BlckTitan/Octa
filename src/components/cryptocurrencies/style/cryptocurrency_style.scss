@@ -15,7 +15,7 @@ div.cryptocurrencies_container{
     }
     div.grid_container{
         .card{
-            width: 15vw;
+            width: 17rem;
             margin: 1rem;
             div.card_header{
             display: flex;
@@ -45,12 +45,6 @@ div.cryptocurrencies_container{
         p{
             line-height: 1.5;
         }
-    }
-}
-@media only screen and (min-width: 1200px){
-    .card{
-        width: 18rem !important;
-        margin: 1rem;
     }
 }
 @media only screen and (max-width: 600px){
@@ -144,10 +138,9 @@ div.cryptocurrencies_container{
             margin-left: 3%;
             a.currency_link{
                 margin: 0 !important;
-                width: 19rem;
             }
             .card{
-                min-width: 15vw !important;
+                min-width: 17rem !important;
             }
         }
     }

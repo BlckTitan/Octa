@@ -8,7 +8,7 @@ select.searchCoin{
     border: 2px solid #888888;
     color: #232323;
 }
-.card{
+.card_news{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -18,7 +18,6 @@ select.searchCoin{
         align-items: flex-start;
         width: 100%;
         height: 100px;
-        padding: 1rem;
         .news_title{
             font-size: 1rem;
             line-height: 1.25;
@@ -34,7 +33,7 @@ select.searchCoin{
     }
     div.newsSource{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         width: 100%;
         height: 4rem;
@@ -50,7 +49,8 @@ select.searchCoin{
         div.provider{
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
+            width: 90%;
             span{
                 margin-left: 1rem;
             }
@@ -118,136 +118,175 @@ select.searchCoin{
         }
     }
 }
-@media only screen and (max-width: 799px){
-    select.searchCoin{
-        display: block;
-        width: 30vw;
-        height: 3.2rem;
-        padding: 0.5rem;
-        font-size: 1rem;
-        border-radius: 0.3rem;
-        border: 2px solid #888888;
-        color: #232323;
-        margin-left: 9%;
-    }
-    a.newsGrid_links{
-        display: flex;
-        justify-content: center;
-    }
-   .card_news{
-        background-color: aqua !important;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 80dvw;
-        width: 80vw;
-        height: 350px !important;
-        margin-bottom: 0 !important;
-        header{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 170px;
-            padding: 1rem;
-            .news_title{
-                font-size: 1.2rem;
-                line-height: 1.25;
-                font-weight: 600;
-            }
-            img{
-                width: 90px;
-                height: 90px;
-                object-fit: cover;
-                object-position: center;
-                margin-bottom: 1rem;
-            }
-        }
-        p{
-            display: inline-block;
-            margin-top: 1rem;
-            height: 4rem;
-            font-size: 1.2rem;
-        }
-        div.newsSource{
-            margin-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            div.provider{
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                span{
-                    margin-left: 1rem;
-                }
-            }
-        }
-    }
-}
 @media only screen and (max-width: 600px){
     select.searchCoin{
         display: block;
-        width: 43vw;
-        height: 3.2rem;
-        padding: 0.5rem;
-        font-size: 1rem;
+        width: 14rem;
+        font-size: 1.1rem;
         border-radius: 0.3rem;
-        border: 2px solid #888888;
-        color: #232323;
-        margin-left: 9%;
+        margin-left: 5%;
     }
     a.newsGrid_links{
         display: flex;
         justify-content: center;
     }
     .card_news{
-        background-color: aqua !important;
         display: flex;
         flex-direction: column;
         position: relative;
-        width: 80dvw;
-        width: 80vw;
-        height: 400px !important;
+        width: 80rem;
+        height: 23rem !important;
         margin-bottom: 0 !important;
+        padding: 1rem;
         header{
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 170px;
-            padding: 1rem;
-            .news_title{
-                font-size: 1rem;
-                font-weight: 600;
-            }
+            width: 100% !important;
+            height: 11rem !important;
             img{
-                width: 60px;
-                height: 60px;
+                width: 100px;
+                height: 80px;
                 object-fit: cover;
                 object-position: center;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
             }
         }
-        p{
-            display: inline-block;
-            height: 6rem;
-            font-size: 1rem;
+        div.news_item{
+            width: 100%;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            padding: 0!important;
         }
         div.newsSource{
             margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             width: 100%;
-            height: 5rem;
+            height: 4rem;
             div.provider{
                 display: flex;
-                align-items: center;
-                justify-content: flex-start;
+                flex-direction: column;
+                align-items: flex-start;
                 span{
                     margin-left: 1rem;
                 }
+                span.time{
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 600px){
+    select.searchCoin{
+        display: block;
+        width: 14rem;
+        font-size: 1.1rem;
+        border-radius: 0.3rem;
+        margin-left: 5%;
+    }
+    a.newsGrid_links{
+        display: flex;
+        justify-content: center;
+    }
+    .card_news{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 80rem;
+        height: 18rem !important;
+        margin-bottom: 0 !important;
+        padding: 1rem;
+        header{
+            display: flex;
+            flex-direction: column;
+            width: 100% !important;
+            height: 7rem !important;
+            img{
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                object-position: center;
+                margin-bottom: 0.5rem;
+            }
+        }
+        div.news_item{
+            width: 100%;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            padding: 0!important;
+        }
+        div.newsSource{
+            margin-top: 1rem;
+            width: 100%;
+            height: 4rem;
+            span.time{
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px){
+    select.searchCoin{
+        width: 18rem;
+        margin-left: 1rem;
+    }
+    .card_news{
+        height: 18rem !important;
+        header{
+            display: flex;
+            flex-direction: column;
+            width: 100% !important;
+            height: 7rem !important;
+        }
+        div.news_item{
+            width: 100%;
+            height: 7rem;
+        }
+    }
+}
+@media only screen and (min-width: 992px){
+    select.searchCoin{
+        width: 18rem;
+        margin-left: 1rem;
+    }
+    .card_news{
+        width: 80rem;
+        height: 18rem !important;
+        header{
+            display: flex;
+            flex-direction: column;
+            width: 100% !important;
+            height: 7rem !important;
+        }
+        div.news_item{
+            width: 100%;
+            height: 7rem;
+        }
+    }
+}
+@media only screen and (min-width: 1200px){
+    .card_news{
+        height: 22rem !important;
+        margin-bottom: 0 !important;
+        padding: 1rem;
+        header{
+            display: flex !important;
+            flex-direction: column;
+            align-items: flex-start !important;
+            width: 100% !important;
+            height: 11rem !important;
+            bac
+            img{
+                width: 90px !important;
+                height: 90px;
+                object-fit: cover;
+                object-position: center;
+                margin-right: 0.5rem;
             }
         }
     }

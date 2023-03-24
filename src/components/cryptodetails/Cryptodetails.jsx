@@ -19,7 +19,7 @@ import FunctionsIcon from '@mui/icons-material/Functions';
 import SuperscriptIcon from '@mui/icons-material/Superscript';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 //component
-import LineChart from '../LineChart';
+import LineChart from './chart/LineChart';
 import Loader from '../Loader';
 
 export default function Cryptodetails() {
