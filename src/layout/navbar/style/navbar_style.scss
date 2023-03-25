@@ -6,9 +6,8 @@ nav.navbar_container{
     ul{
         margin-top: 8rem;
         li{
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             margin: 1rem 0;
-            padding: 1rem;
         }
         li:hover{
             background-color: rgb(112, 111, 111);
@@ -36,7 +35,34 @@ nav.navbar_container{
         }
     }
 }
-
+@media only screen and (max-width: 600px){
+    nav.navbar_container{
+        padding: 1rem 0.5rem;
+        ul{
+            li{
+                padding: 1.5rem 0;
+                margin: 1.5rem 0;
+            }
+            a{
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 600px){
+    nav.navbar_container{
+        padding: 1rem 0.5rem;
+        ul{
+            li{
+                padding: 1.5rem 0;
+                margin: 1.5rem 0;
+            }
+            a{
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
 @media only screen and (min-width: 800px) and (max-width: 990px){
     nav.navbar_container{
         padding: 1rem 0.5rem;
