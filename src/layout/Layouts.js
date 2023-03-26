@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from './navbar/NavBar';
 import TopNav from './topNav/TopNav';
@@ -12,6 +12,10 @@ import './script/script.js';
 export default function Layouts() {
 
   const [active, setActive] = useState(false)
+
+  useEffect(()=>{
+
+  }, [active])
 
   return (
     <div className='container'>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useGetCryptoNewsQuery } from '../../app/newsSlice';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Avatar, Grid } from '@mui/material';
-import { Card, Typography, CardContent} from '@mui/material';
+import { Card, Typography } from '@mui/material';
 import './style/news_style.scss';
 import moment from 'moment/moment';
 import Loader from '../Loader';
@@ -28,7 +28,6 @@ export default function News({simplified}) {
         {!simplified &&
           <Grid item xs={12}>
             <select onClick={(e) => {setSearchOptions(e.target.value)}} className='searchCoin'>
-
                   <option value='cryptocurrency'>Cryptocurrency</option>
               {cryptoCoin && cryptoCoin?.data?.coins.map((coin, index) => (
                   <option value={coin.name} key={index}>{coin.name}</option>
