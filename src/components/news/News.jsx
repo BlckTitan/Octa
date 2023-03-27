@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useGetCryptoNewsQuery } from '../../app/newsSlice';
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
 import { Avatar, Grid } from '@mui/material';
-import { Card, Typography, CardContent} from '@mui/material';
+import { Card, Typography } from '@mui/material';
 import './style/news_style.scss';
 import moment from 'moment/moment';
 import Loader from '../Loader';
@@ -21,7 +21,6 @@ export default function News({simplified}) {
   
   if( isLoading) return <Loader/>;
   if( isFetching) return <Loader/>
-  {console.log(cryptoNews)}
   return (
     <div >
       <Grid container spacing={4}>
