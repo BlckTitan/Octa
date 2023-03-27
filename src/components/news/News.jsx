@@ -21,7 +21,6 @@ export default function News({simplified}) {
   
   if( isLoading) return <Loader/>;
   if( isFetching) return <Loader/>
-
   return (
     <div >
       <Grid container spacing={4}>
@@ -44,7 +43,11 @@ export default function News({simplified}) {
                 <header>
 
                   <img 
-                    src={cryproNewsData?.image?.thumbnail?.contentUrl}
+                    src={
+                      (cryproNewsData?.image) ?
+                      cryproNewsData?.image?.thumbnail?.contentUrl : 
+                      'https://imgs.search.brave.com/Xsw5QrZVjKCHjpqT6gok-qZIMvv1HUUpUUiYj2V3woI/rs:fit:1200:720:1/g:ce/aHR0cHM6Ly9hc3Nl/dHMubG9zc3ByZXZl/bnRpb25tZWRpYS5j/b20vdXBsb2Fkcy8y/MDE5LzA4L2NyeXB0/b2N1cnJlbmN5LWJp/dGNvaW4tMTI4MHg3/MjAuanBn'
+                    }
                   alt='Crypto news thumbnail'
                   />
                   
@@ -61,7 +64,11 @@ export default function News({simplified}) {
                   
                   <div className='newsSource'>
                       <Avatar 
-                        src={cryproNewsData?.provider[0]?.image?.thumbnail?.contentUrl} 
+                        src={
+                          (cryproNewsData?.provider[0]?.image) ?
+                          cryproNewsData?.provider[0]?.image?.thumbnail?.contentUrl : 
+                          'https://imgs.search.brave.com/Xsw5QrZVjKCHjpqT6gok-qZIMvv1HUUpUUiYj2V3woI/rs:fit:1200:720:1/g:ce/aHR0cHM6Ly9hc3Nl/dHMubG9zc3ByZXZl/bnRpb25tZWRpYS5j/b20vdXBsb2Fkcy8y/MDE5LzA4L2NyeXB0/b2N1cnJlbmN5LWJp/dGNvaW4tMTI4MHg3/MjAuanBn'
+                        } 
                         alt=''
                       />
                     <div className='provider'>

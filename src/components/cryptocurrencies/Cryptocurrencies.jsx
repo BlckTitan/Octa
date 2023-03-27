@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom'
 import { useGetCryptoCoinsQuery } from '../../app/coinSlice';
-import { Grid, Card, CardContent, Avatar } from '@mui/material';
+import { Card, CardContent, Avatar } from '@mui/material';
 import './style/cryptocurrency_style.scss';
 
 export default function Cryptocurrencies({ simplified }) {
@@ -35,7 +35,7 @@ export default function Cryptocurrencies({ simplified }) {
         </div>
       }
       
-      <div container className='grid_container'>
+      <div  className='grid_container'>
         {cryptos && cryptos.map((currency) => (
           <Link to={`/crypto/${currency.uuid}`} key={currency.uuid} className='currency_link'>
             <Card className='card'>
