@@ -263,10 +263,10 @@ div.container{
             z-index: -1;
             main{
                 flex: 10;
-                left: 15%;
-                width: 85% !important;
+                left: 17%;
+                width: Calc(100% - 17vw)!important;
                 height:  100%;
-                padding: 5rem 2rem;
+                padding: 3rem 1rem;
                 z-index: -1;
                 position: absolute;
                 right: 0;
