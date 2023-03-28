@@ -24,13 +24,13 @@ export default function Exchanges({simplified}) {
   let count = simplified ? 10 : 100;
   
   const [coinId, setCoinId] = useState('Qwsogvtv82FCd')
-  const {data: coinExchange, isFetching} = useGetCoinExchangesByIdQuery({coinId, count})
-  const {data: allCoins} = useGetCryptoCoinsQuery(count)
+  const {data: coinExchange} = useGetCoinExchangesByIdQuery({coinId, count})
+  const {data: allCoins, isLoading} = useGetCryptoCoinsQuery(count)
 
   let coinDetailsInfo = allCoins?.data?.coins
   let coinExchangeInfo = coinExchange?.data?.exchanges;
 
-  if(isFetching) return <Loader/>;
+  if(isLoading) return <Loader/>;
   
   return (
     <div className='exchange_container'>
