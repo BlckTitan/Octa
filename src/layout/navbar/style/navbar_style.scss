@@ -37,7 +37,7 @@ nav.navbar_container{
         padding: 1rem 0.5rem;
         ul{
             li{
-                padding: 1.5rem 0;
+                padding: 1rem 0;
                 margin: 1.5rem 0;
             }
             a{
@@ -51,7 +51,7 @@ nav.navbar_container{
         padding: 1rem 0.5rem;
         ul{
             li{
-                padding: 1.5rem 0;
+                padding: 1rem 0 !important;
                 margin: 1.5rem 0;
             }
             a{
@@ -60,27 +60,27 @@ nav.navbar_container{
         }
     }
 }
-@media only screen and (min-width: 800px) and (max-width: 990px){
+@media only screen and (min-width: 768px){
+    nav.navbar_container{
+        padding: 1rem 0.5rem;
+        ul{
+            li{
+                padding: 1rem 0 !important;
+                margin: 1.5rem 0;
+            }
+            a{
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 992px){
     nav.navbar_container{
         padding: 1rem 0.5rem;
         ul{
             margin-top: 7rem;
             li{
-                padding: 0 1rem;
-                margin: 1.5rem 0;
-            }
-            a{
-                font-size: 1.1rem;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 799px){
-    nav.navbar_container{
-        padding: 1rem 0.5rem;
-        ul{
-            li{
-                padding: 0;
+                padding: 1rem 0 !important;
                 margin: 1.5rem 0;
             }
             a{
