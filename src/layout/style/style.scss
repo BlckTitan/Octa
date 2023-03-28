@@ -91,47 +91,7 @@ div.container{
             width: 15%;
             height: 100vh;
         }
-    }
-    
-
-    div.footer{
-        background-color: #232323;
-        position: absolute;
-        width: 100%;
-        span, a{
-            color: #e8e8e8;
-        }
-        div.footer_text{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1rem;
-            span.site_name{
-                font-size: 1.2rem;
-                font-weight: 600;
-            }
-            span.copyright{
-                font-size: 0.9rem;
-                font-weight: 300;
-            }
-        }
-        div.footer_links{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 24rem;
-            a{
-                font-size: 1.2rem;
-                padding: 0.2rem 0.5rem;
-                border-radius: 0.3rem;
-            }
-            a:hover{
-                background-color: #e8e8e8;
-                color: #232323 !important;
-            }
-        }
-    }
-    
+    } 
 }
 @media only screen and (max-width: 600px){
     div.container{

@@ -10,8 +10,6 @@ import CurrencyBitcoinOutlinedIcon from '@mui/icons-material/CurrencyBitcoinOutl
 import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 //style
 import './style/navbar_style.scss';
-//script
-import './script/navBar_script';
 
 export default function NavBar() {
 
@@ -23,18 +21,25 @@ export default function NavBar() {
     {label: 'Exchanges', menu_link: '/exchanges', key: 'exchanges', menu_icon: <PaidOutlinedIcon/>},
     {label: 'Currency', menu_link: '/cryptocurrencies', key: 'cryptocurrencies', menu_icon: <CurrencyBitcoinOutlinedIcon/>},
     {label: 'News', menu_link: '/news', key: 'news', menu_icon: <NewspaperOutlinedIcon/>},
-  ]
+  ];
+
+  let currentPage = window.location.pathname;
+
   return (
     <nav className='navbar_container'>
-      
+
       <ul>
         {menuLinks.map((menu_links_item) => (
           <li 
             key={menu_links_item.key} 
-            className='navigation_link' 
+            className={
+              (currentPage === menu_links_item.menu_link) ?
+              'navigation_link active' :
+              'navigation_link'
+            } 
             onClick={() => dispatch(setSidebarActive(!active))}
           >
-            <Link to={menu_links_item.menu_link} className='clicked'>
+            <Link to={menu_links_item.menu_link}>
               <span>{menu_links_item.menu_icon}</span>
               <span>{menu_links_item.label}</span>
             </Link>
