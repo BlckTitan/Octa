@@ -31,7 +31,7 @@ export default function Exchanges({simplified}) {
   let coinExchangeInfo = coinExchange?.data?.exchanges;
 
   if(isFetching) return <Loader/>;
-  console.log(coinDetailsInfo)
+  
   return (
     <div className='exchange_container'>
       <header>

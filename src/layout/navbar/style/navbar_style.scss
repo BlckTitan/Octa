@@ -9,17 +9,14 @@ nav.navbar_container{
             margin: 1rem 0;
             padding: 1rem 0;
         }
-        li:hover{
+        li:hover,
+        li.active{
             background-color: rgb(112, 111, 111);
             border-radius: 0.3rem;
             span{
                 color: #232323;
                 font-weight: 600;
             }
-        }
-        li.active{
-            background-color: rgb(112, 111, 111);
-            border-radius: 0.3rem;
         }
         a{
             color: #e8e8e8;

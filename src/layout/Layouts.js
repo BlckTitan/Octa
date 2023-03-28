@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSidebarActive } from '../app/utilitySlice';
+//components
 import NavBar from './navbar/NavBar';
 import TopNav from './topNav/TopNav';
 //style
@@ -11,16 +14,13 @@ import './script/script.js';
 
 export default function Layouts() {
 
-  const [active, setActive] = useState(false)
-
-  useEffect(()=>{
-
-  }, [active])
-
+  const active  = useSelector((state) => state.sidebarToggle.sidebarState)
+  const dispatch = useDispatch()
+  
   return (
     <div className='container'>
       <nav className='topNav'>
-        <button onClick={() => setActive(!active)}>
+        <button onClick={() => dispatch(setSidebarActive(!active))}>
           <MenuOutlinedIcon sx={{fontSize: 30}}/>
         </button>
         
